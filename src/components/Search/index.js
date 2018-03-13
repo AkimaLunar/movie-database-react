@@ -17,7 +17,9 @@ const Search = ({ onChange, state }) => (
 
 Search.propTypes = {
   onChange: PropTypes.func,
-  state: PropTypes.string
+  state: PropTypes.shape({
+    search: PropTypes.string
+  })
 }
 
 export default Search;

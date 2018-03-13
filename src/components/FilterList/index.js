@@ -72,7 +72,9 @@ const FilterList = ({
   );
 
 FilterList.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.shape({
+    movies: PropTypes.array
+  }),
   search: PropTypes.string,
   clearSearch: PropTypes.func,
   filter: PropTypes.string,
