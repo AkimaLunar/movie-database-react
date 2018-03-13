@@ -12,7 +12,7 @@ const mapStateToProps = ({ movies, filter, search }) => ({
   movies: getMovies(movies, search, filter),
   filter,
   search
-});
+})
 
 const mapDispatchToProps = (dispatch) => ({
   fetchMovies: () => dispatch(fetchMovies()),

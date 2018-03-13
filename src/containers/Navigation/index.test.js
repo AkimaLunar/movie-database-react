@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Navigation from './index';
+
+import { Provider } from 'react-redux';
+import { store } from '../../store';
 
 describe('<Navigation /', () => {
   it('renders without crashing', () => {
-    shallow(<Navigation />);
+    mount(<Provider store={store}><Navigation /></Provider>).dive();
   });
 });

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import FaSearch from 'react-icons/lib/fa/search'
 import './style.css';
 
@@ -13,5 +14,10 @@ const Search = ({ onChange, state }) => (
     />
   </div>
 );
+
+Search.propTypes = {
+  onChange: PropTypes.func,
+  state: PropTypes.string
+}
 
 export default Search;

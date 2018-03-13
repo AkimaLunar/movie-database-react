@@ -1,5 +1,3 @@
-import { createSelector } from 'reselect';
-
 import {
   IS_LOADING_MOVIES,
   HAS_ERRORED_MOVIES,
@@ -30,28 +28,18 @@ export const movies = (state, action) => {
   }
 }
 
-export const getFilteredMovies = (state, filter) => {
-  if (filter && filter.filter.length > 0) {
-    return {
-      ...state,
-      movies: state.movies.filter(m => {
-        return m.genre &&
-          m.genre.toLowerCase().trim() === filter.filter
-      })
-    }
-  }
-  return state;
-}
+export const getFilteredMovies = (state, filter) => ({
+  ...state,
+  movies: state.movies.filter(m => {
+    return m.genre &&
+      m.genre.toLowerCase().trim() === filter.filter
+  })
+})
 
-export const getSearchedMovies = (state, search) => {
-  if (search && search.search.length > 3) {
-    return {
-      ...state,
-      movies: state.movies.filter(m => m.title.toLowerCase().includes(search.search))
-    }
-  }
-  return state;
-}
+export const getSearchedMovies = (state, search) => ({
+  ...state,
+  movies: state.movies.filter(m => m.title.toLowerCase().includes(search.search))
+})
 
 
 export const getMovies = (state, search, filter) => {
@@ -65,11 +53,3 @@ export const getMovies = (state, search, filter) => {
 
   return state;
 }
-// export const getMovies = createSelector(
-//   [getSearchedMovies, getFilteredMovies],
-//   (searched, filtered) => {
-//     searched.length < filtered.length
-//       ? searched
-//       : filtered
-//   }
-// );

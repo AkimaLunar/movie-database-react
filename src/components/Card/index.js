@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 
 const Card = ({ movie }) => {
@@ -10,4 +11,9 @@ const Card = ({ movie }) => {
     </article>);
 }
 
+Card.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string
+  })
+}
 export default Card;

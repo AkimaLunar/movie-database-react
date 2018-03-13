@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 import Filter from '../Filter';
 import { normalizeKey } from '../../helpers/normalizeKey';
@@ -13,6 +14,11 @@ const SearchActive = ({ search, clearSearch }) => (
   </div>
 );
 
+SearchActive.propTypes = {
+  search: PropTypes.string,
+  clearSearch: PropTypes.func
+}
+
 const FilterNotSet = ({ genres, setFilter }) => (
   genres.map(genre => (
     <li
@@ -24,6 +30,11 @@ const FilterNotSet = ({ genres, setFilter }) => (
   ))
 );
 
+FilterNotSet.propTypes = {
+  genres: PropTypes.array,
+  setFilter: PropTypes.func
+}
+
 const FilterSet = ({ filter, clearFilter }) => (
   <div>
     <h2 className="filter-list__set-filter"><span>&#35;&thinsp;</span>{filter}</h2>
@@ -32,6 +43,11 @@ const FilterSet = ({ filter, clearFilter }) => (
     </button>
   </div>
 );
+
+FilterSet.propTypes = {
+  filter: PropTypes.string,
+  clearFilter: PropTypes.func
+}
 
 const FilterList = ({
   movies,
@@ -54,5 +70,14 @@ const FilterList = ({
       }
     </ul>
   );
+
+FilterList.propTypes = {
+  movies: PropTypes.array,
+  search: PropTypes.string,
+  clearSearch: PropTypes.func,
+  filter: PropTypes.string,
+  setFilter: PropTypes.func,
+  clearFilter: PropTypes.func
+}
 
 export default FilterList;

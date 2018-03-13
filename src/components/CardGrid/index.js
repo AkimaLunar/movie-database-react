@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
 import { normalizeKey } from '../../helpers/normalizeKey';
 import Card from '../Card';
@@ -17,5 +18,13 @@ const CardGrid = ({ movies }) => (
     }
   </div>
 );
+
+CardGrid.propTypes = {
+  movies: PropTypes.shape({
+    isLoading: PropTypes.bool,
+    hasErrored: PropTypes.bool,
+    movies: PropTypes.array
+  })
+}
 
 export default CardGrid;
