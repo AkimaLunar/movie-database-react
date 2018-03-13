@@ -23,7 +23,8 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && surge ./build jazzy-bite.surge.sh"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
