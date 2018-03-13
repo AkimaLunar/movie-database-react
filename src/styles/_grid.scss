@@ -1,0 +1,18 @@
+// Layout
+$container-width: 74rem;
+$container-padding: 0 1rem;
+
+// Breakpoints
+$small-screen: 24rem;
+$medium-screen: 42rem;
+$large-screen: $container-width;
+
+%container {
+  max-width: $container-width;
+  margin: 0 auto;
+  @media screen and (max-width: $large-screen) {
+    padding: $container-padding;
+    padding-top:.5rem;
+    padding-bottom:.5rem;
+  }
+}

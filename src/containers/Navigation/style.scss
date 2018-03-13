@@ -1,0 +1,19 @@
+@import '../../styles/colors';
+@import '../../styles/typography';
+@import '../../styles/grid';
+
+.navigation {
+  
+  &__inner {
+    @extend %container;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  & .logo{
+      margin-right: 2rem;
+  }
+};

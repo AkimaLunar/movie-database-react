@@ -1,0 +1,12 @@
+@import '../../styles/grid';
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-gap: 2rem;
+  grid-auto-rows: minmax(14rem,auto);
+
+  @media screen and (min-width: $small-screen) {
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  }
+}
