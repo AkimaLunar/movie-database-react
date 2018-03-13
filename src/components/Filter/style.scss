@@ -1,0 +1,17 @@
+@import '../../styles/colors';
+@import '../../styles/typography';
+
+.filter {
+  display: inline-block;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  border: 1px solid $color-secondary;
+  border-radius: 2px;
+  background: transparentize($color-secondary, .75);
+  & span {
+    color: $color-secondary;
+    font-size: 1.25rem;
+    vertical-align: -8%;
+    font-weight: $font-weight-bold;
+  }
+}

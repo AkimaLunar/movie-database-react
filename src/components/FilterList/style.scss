@@ -1,0 +1,41 @@
+@import '../../styles/colors';
+@import '../../styles/typography';
+
+.filter-list {
+  padding: 0;
+  height: 4rem;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  &__set-filter {
+    display: inline-block;
+    & span {
+      color: $color-secondary;
+      font-size: 1.25rem;
+      vertical-align: -8%;
+      font-weight: $font-weight-bold;
+    }
+  }
+  &__clear {
+    position: relative;
+    margin-left: 1rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    line-height: 1.5;
+    background: rgba(255,255,255,.05);
+
+    &__icon {
+      fill: $color-secondary;
+      position: absolute;
+      left: .5rem;
+      top: .75rem;
+    }
+  }
+
+}

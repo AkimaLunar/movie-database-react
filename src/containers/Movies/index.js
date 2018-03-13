@@ -1,27 +1,38 @@
 import * as React from 'react';
 import './style.css';
 import { fetchMovies } from '../../store/Movies/actions';
+import { getFilteredMovies } from '../../store/Movies/';
+import { setFilter, clearFilter } from '../../store/Filter/actions';
 import { connect } from 'react-redux';
 import CardGrid from '../../components/CardGrid';
+import FilterList from '../../components/FilterList';
 
-const mapStateToProps = ({ movies }) => ({ movies });
+const mapStateToProps = ({ movies, filter }) => ({
+  movies: getFilteredMovies(movies, filter),
+  filter
+});
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchMovies: () => dispatch(fetchMovies())
+  fetchMovies: () => dispatch(fetchMovies()),
+  setFilter: (filter) => dispatch(setFilter(filter)),
+  clearFilter: (filter) => dispatch(clearFilter(filter))
 })
 
 class Movies extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount() {
-    this.props.fetchMovies()
+    this.props.fetchMovies();
   }
 
   render() {
     return (
       <div className="movies">
+        <FilterList
+          movies={this.props.movies}
+          filter={this.props.filter.filter}
+          setFilter={this.props.setFilter}
+          clearFilter={this.props.clearFilter}
+        />
         <CardGrid movies={this.props.movies} />
       </div>
     )
