@@ -6,13 +6,17 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import { reduxInspector } from '../helpers/reduxInspector';
+import { search, initState as searchState } from './Search';
+import { movies, initState as movieState } from './Movies';
 
 const initState = {
-  movies: []
+  search: searchState,
+  movies: movieState
 }
-
+console.log(initState);
 const rootReducer = combineReducers({
-
+  search,
+  movies
 })
 
 const middleware = applyMiddleware(thunk);

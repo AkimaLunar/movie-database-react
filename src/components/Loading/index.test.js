@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Movies from './index';
+import Loading from './index';
 
-describe('<Movies /', () => {
+describe('<Loading /', () => {
   it('renders without crashing', () => {
-    shallow(<Movies />);
+    shallow(<Loading />);
   });
 });
