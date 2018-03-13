@@ -1,9 +1,13 @@
 @import '../../styles/colors';
 @import '../../styles/typography';
+@import '../../styles/grid';
 
 .filter-list {
   padding: 0;
-  height: 4rem;
+  min-height: 4rem;
+  @media screen and (max-width: $medium-screen) {
+    margin: 0;
+  }
 
   li {
     list-style: none;

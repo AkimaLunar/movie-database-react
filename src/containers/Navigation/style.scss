@@ -7,13 +7,20 @@
   &__inner {
     @extend %container;
     padding-top:1rem;
-    padding-bottom:1rem;
-    display: flex;
     align-content: center;
     align-items: center;
+    @media screen and (min-width: $medium-screen) {
+      display: flex;
+      padding-bottom:1rem;
+    }
   }
-
+  
   & .logo{
-      margin-right: 2rem;
+    margin-right: 2rem;
+    @media screen and (max-width: $medium-screen) {
+      margin-right: 0;
+      margin-bottom: .5rem;
+      text-align: center;
+    }
   }
 };
