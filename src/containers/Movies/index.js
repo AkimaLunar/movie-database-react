@@ -1,14 +1,14 @@
 import * as React from 'react';
 import './style.css';
 import { fetchMovies } from '../../store/Movies/actions';
-import { getFilteredMovies } from '../../store/Movies/';
+import { getFilteredMovies, getSearchedMovies } from '../../store/Movies/';
 import { setFilter, clearFilter } from '../../store/Filter/actions';
 import { connect } from 'react-redux';
 import CardGrid from '../../components/CardGrid';
 import FilterList from '../../components/FilterList';
 
-const mapStateToProps = ({ movies, filter }) => ({
-  movies: getFilteredMovies(movies, filter),
+const mapStateToProps = ({ movies, filter, search }) => ({
+  movies: getSearchedMovies(movies, search),
   filter
 });
 
