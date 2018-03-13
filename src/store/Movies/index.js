@@ -52,3 +52,24 @@ export const getSearchedMovies = (state, search) => {
   }
   return state;
 }
+
+
+export const getMovies = (state, search, filter) => {
+  if (search && search.search.length > 3) {
+    return getSearchedMovies(state, search);
+  }
+
+  if (filter && filter.filter.length > 0) {
+    return getFilteredMovies(state, filter);
+  }
+
+  return state;
+}
+// export const getMovies = createSelector(
+//   [getSearchedMovies, getFilteredMovies],
+//   (searched, filtered) => {
+//     searched.length < filtered.length
+//       ? searched
+//       : filtered
+//   }
+// );
